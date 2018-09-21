@@ -1,11 +1,9 @@
 import { Injectable } from '@angular/core';
 
 import {Http ,Response} from '@angular/http';
-import 'rxjs/add/operator/toPromise';
+
 import { catchError, map, tap } from 'rxjs/operators';
-//import {Observable} from 'rxjs';
-import 'rxjs/add/operator/map';
-import 'rxjs/add/operator/catch';
+
 import { Observable, Subject } from 'rxjs';
 
 
@@ -13,18 +11,18 @@ import { Observable, Subject } from 'rxjs';
 
 export class MiHttpService {
 
-  
+  api="https://restcountries.eu/rest/v2/";
+  //peticion:any;
 
   constructor(public http:Http) { }
   
-  public httpGetPromise(url: string, objeto:any){
+  public httpGet(metodo:string, objeto:any):Observable<any>{
 
 
     return this.http
-    .get(url)
-    .toPromise()
-    .then(this.extraerDatos)
-    .catch(this.handleError);
+    .get(this.api + metodo)
+    .pipe(tap(data => {return this.extraerDatos(data)}));
+    
   }
 
   private extraerDatos(resp:Response) {
