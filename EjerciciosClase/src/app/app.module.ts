@@ -5,6 +5,9 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { HttpModule } from '@angular/http';
+
+//import { HttpClientModule }    from '@angular/common/http';
+
 import { MiHttpService } from './servicios/mi-http.service';
 import { GenericoService } from './servicios/generico.service';
 
@@ -15,6 +18,7 @@ import { GenericoService } from './servicios/generico.service';
   imports: [
     BrowserModule,
     HttpModule
+    //HttpClientModule
     
   ],
   providers: [

@@ -11,13 +11,14 @@ import { Observable, Subject } from 'rxjs';
 
 export class MiHttpService {
 
-  api="https://restcountries.eu/rest/v2/";
-  //peticion:any;
+  //api="https://restcountries.eu/rest/v2/";
+    api="http://localhost/Programacion-3-2017/TP_ESTACIONAMIENTO_DV/"
+  
 
   constructor(public http:Http) { }
   
-  public httpGet(metodo:string, objeto:any):Observable<any>{
 
+  public httpGet(metodo:string, objeto:any):Observable<any>{
 
     return this.http
     .get(this.api + metodo)

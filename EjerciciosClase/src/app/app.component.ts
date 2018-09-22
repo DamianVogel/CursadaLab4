@@ -14,12 +14,15 @@ export class AppComponent {
   }
 
   ngOnInit() {
-    this.servicio.traerJugadores().subscribe(data=>{console.log(JSON.parse(data._body).filter(function(pais){return pais.name == 'Brazil';}));})
+    //this.servicio.traerJugadores().subscribe(data=>{console.log(JSON.parse(data._body).filter(function(pais){return pais.name == 'Brazil';}));})
+
+    this.servicio.traerJugadores().subscribe(
+        data=>{console.log(JSON.parse(data._body)
+          );})
 
 
-
-  }
-
+  
+        }
 
 
 
