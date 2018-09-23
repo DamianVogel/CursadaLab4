@@ -17,7 +17,7 @@ import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';    
 
 
-const miRuteo = [{path:'pruebaRuteo', component:PreguntaComponent}]
+const miRuteo = [{path:'pruebaRuteo', component:TemaComponent}]
 
 
 

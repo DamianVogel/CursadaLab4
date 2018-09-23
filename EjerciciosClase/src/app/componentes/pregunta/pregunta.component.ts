@@ -8,12 +8,12 @@ import { EventEmitter} from '@angular/core';
 })
 export class PreguntaComponent implements OnInit {
 
-  tema: string;
+  
   
   @Input()
-  
+  tema: string;
+  @Input()
   cuestionario: string;
-
   
   @Output() emiterPregunta:EventEmitter<any> = new EventEmitter();
 
