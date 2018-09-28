@@ -14,10 +14,13 @@ import { TemaComponent } from './componentes/tema/tema.component';
 import { CuestionarioComponent } from './componentes/cuestionario/cuestionario.component';
 import { PreguntaComponent } from './componentes/pregunta/pregunta.component';
 import { FormsModule } from '@angular/forms';
-import { RouterModule } from '@angular/router';    
+import { RouterModule } from '@angular/router';
+import { HeladosComponent } from './componentes/helados/helados.component';    
 
 
-const miRuteo = [{path:'pruebaRuteo', component:TemaComponent}]
+const miRuteo = [{path:'pruebaRuteo', component:TemaComponent},
+                 {path:'pruebaParcial', component:HeladosComponent} 
+                ]
 
 
 
@@ -27,7 +30,8 @@ const miRuteo = [{path:'pruebaRuteo', component:TemaComponent}]
     AppComponent,
     TemaComponent,
     CuestionarioComponent,
-    PreguntaComponent
+    PreguntaComponent,
+    HeladosComponent
   ],
   imports: [
     BrowserModule,

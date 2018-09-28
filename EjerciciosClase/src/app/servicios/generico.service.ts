@@ -22,4 +22,14 @@ export class GenericoService {
       .pipe(data => { return data; });
 
   }
+
+  public traerHelados():Observable<any> {
+    return this.miHttp.httpGet("TraerTodosLosHelados", {})
+      .pipe(data => { return data; });
+
+  }
+
+
+
+
 }
