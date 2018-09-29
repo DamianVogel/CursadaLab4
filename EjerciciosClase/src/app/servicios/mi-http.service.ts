@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 
-import {Http ,Response} from '@angular/http';
+import {Http ,Response, Headers} from '@angular/http';
 
 import { catchError, map, tap } from 'rxjs/operators';
 
@@ -26,6 +26,34 @@ export class MiHttpService {
     
   }
 
+  /*
+  public httpPost(metodo:string, objeto:any)
+  {
+    return this.http.post(
+                          this.api + metodo,objeto,{
+                            headers : new Headers({
+                              'Content-Type' : 'application/json'
+                              }
+                            )
+    })
+    .pipe(catchError(this.handleError));
+  }
+*/
+  public httpPost(metodo:string, objeto:any)
+  {
+    return this.http.post(this.api + metodo,objeto)
+    .pipe(catchError(this.handleError));
+  }
+
+  /*
+  public httpPostO(url: string, objeto): Observable<Response> {
+    return this.http.post(this.api + url, objeto)
+      .map((res: Response) => res.json())
+      .catch((err: any) => Observable.throw(err.json().error || 'Server error'));
+  }
+*/
+
+
   private extraerDatos(resp:Response) {
 
       return resp.json() || {};
@@ -36,11 +64,7 @@ export class MiHttpService {
       return error;
   }
 
-  public httpGetO(apiRuta)
-  {
-
-  }
-  
+ 
 
 
 

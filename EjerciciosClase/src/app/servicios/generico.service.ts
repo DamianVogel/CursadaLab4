@@ -29,6 +29,12 @@ export class GenericoService {
 
   }
 
+  public AltaHelado(helado):Observable<any> {
+    return this.miHttp.httpPost("altaHelado",helado)
+        .pipe(data =>{ return data;}); 
+
+  }
+
 
 
 

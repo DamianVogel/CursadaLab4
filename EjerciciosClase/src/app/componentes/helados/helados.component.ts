@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { GenericoService } from '../../servicios/generico.service';
-
+import { Helado } from '../../clases/helado';
 
 @Component({
   selector: 'app-helados',
@@ -10,6 +10,10 @@ import { GenericoService } from '../../servicios/generico.service';
 export class HeladosComponent implements OnInit {
 
   listaHelados: any;
+
+  helado : any;
+
+  resultado : any;
 
   mostrarHelados: boolean = false;
 
@@ -23,7 +27,18 @@ export class HeladosComponent implements OnInit {
 
   ngOnInit() {
     
+    this.helado = new Helado('Mascarpoe','Crema',1);
+
+    console.log(this.helado);
+
+    this.servicio.AltaHelado(this.helado)
+    .subscribe(
+     // data => { this.resultado = data._body;}
+    )
+    ;
     
+    
+
   }
 
   MostrarHelados(){
