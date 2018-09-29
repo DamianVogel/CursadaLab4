@@ -26,7 +26,26 @@ export class MiHttpService {
     
   }
 
-  /*
+ 
+  public httpPost(metodo:string, objeto:any)
+  {
+    return this.http.post(this.api + metodo,objeto)
+    .pipe(catchError(this.handleError));
+  }
+
+  
+  private extraerDatos(resp:Response) {
+
+      return resp.json() || {};
+
+  }
+  private handleError(error:Response | any) {
+
+      return error;
+  }
+
+ /* 
+  //Con header
   public httpPost(metodo:string, objeto:any)
   {
     return this.http.post(
@@ -39,13 +58,9 @@ export class MiHttpService {
     .pipe(catchError(this.handleError));
   }
 */
-  public httpPost(metodo:string, objeto:any)
-  {
-    return this.http.post(this.api + metodo,objeto)
-    .pipe(catchError(this.handleError));
-  }
 
-  /*
+/*
+  // Codigo de Mati
   public httpPostO(url: string, objeto): Observable<Response> {
     return this.http.post(this.api + url, objeto)
       .map((res: Response) => res.json())
@@ -54,15 +69,6 @@ export class MiHttpService {
 */
 
 
-  private extraerDatos(resp:Response) {
-
-      return resp.json() || {};
-
-  }
-  private handleError(error:Response | any) {
-
-      return error;
-  }
 
  
 

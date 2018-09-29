@@ -17,12 +17,14 @@ export class GenericoService {
 
   }
 
+  /*
   public traerJugadores():Observable<any> {
     return this.miHttp.httpGet("ReportLogEmpleados", {})
       .pipe(data => { return data; });
 
   }
-
+*/
+  
   public traerHelados():Observable<any> {
     return this.miHttp.httpGet("TraerTodosLosHelados", {})
       .pipe(data => { return data; });
