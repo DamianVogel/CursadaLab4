@@ -1,11 +1,15 @@
-<!--
-<p *ngFor="let helado of this.listaHelados">
-  helados works!
 
-  
-  
-  {{helado.id_helado}}
-  {{listaHelados.id_helado}}
-</p>
--->
+
+<button (click)="MostrarHelados()">Te muestro los helados</button>
+
+<div *ngIf="mostrarHelados">
+  <p *ngFor="let helado of this.listaHelados">
+    helados works!
+    
+    {{helado.id_helado}}
+    {{helado.Sabor}}
+    
+  </p>
+<div>
+
 

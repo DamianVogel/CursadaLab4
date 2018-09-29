@@ -11,26 +11,36 @@ export class HeladosComponent implements OnInit {
 
   listaHelados: any;
 
+  mostrarHelados: boolean = false;
+
   constructor(private servicio:GenericoService) {
     
-    /*
-    this.listaHelados = this.servicio.traerHelados().subscribe(
-      data=>(JSON.parse(data._body)));
-      */
-        
-     this.listaHelados = this.servicio.traerJugadores().subscribe(
-      data=>JSON.parse(data._body)
-        );
-
-        
-   }
+    this.servicio.traerHelados().subscribe(data => {   
+      this.listaHelados = JSON.parse(data._body);
+    })
+    
+  }
 
   ngOnInit() {
     
     
-    console.log(this.listaHelados);
-
   }
+
+  MostrarHelados(){
+    if(this.mostrarHelados == false){ 
+      
+      this.mostrarHelados = true;
+    
+    }  
+    else{
+
+      this.mostrarHelados = false;
+    
+    }
+  
+  
+  }
+
 
   
 }
