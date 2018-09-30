@@ -37,7 +37,11 @@ export class GenericoService {
 
   }
 
+  public ServiceTraerUnHelado(idHelado):Observable<any> {
+    return this.miHttp.httpGet("TraerUnHelado/"+idHelado, {})
+      .pipe(data => { return data; });
 
+  }
 
 
 }

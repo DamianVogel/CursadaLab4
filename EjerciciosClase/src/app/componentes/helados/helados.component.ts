@@ -12,6 +12,8 @@ export class HeladosComponent implements OnInit {
 
   listaHelados: any;
 
+  unHelado: Helado;
+
   helado : any;
 
   resultado : any;
@@ -44,6 +46,14 @@ export class HeladosComponent implements OnInit {
   
   }
 
+  MostrarUnHelado(idHelado){
+    this._servicio.ServiceTraerUnHelado(idHelado).subscribe(data =>{
+      this.unHelado = JSON.parse(data._body);
+    });
+
+    console.log(this.unHelado);
+
+  }
 
 
   MostrarHelados(){

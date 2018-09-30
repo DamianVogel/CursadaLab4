@@ -1,9 +1,17 @@
+<div *ngIf="unHelado" >
+    Sabor de un solo helado: {{unHelado.Sabor}}
+  </div>
+
+
 
 
 <button (click)="MostrarHelados()">Te muestro los helados</button>
 
 <button (click)="AltaHelado()">Dar de alta helado</button>
 
+<button (click)="MostrarUnHelado(htmlIdHelado)">Mostrar un helado</button>
+
+<input [(ngModel)]="htmlIdHelado" placeholder="ingrese id de helado" name="idHelado" type="text"  style="width:50%"/>
 
 <div *ngIf="mostrarHelados">
   <p *ngFor="let helado of this.listaHelados">
