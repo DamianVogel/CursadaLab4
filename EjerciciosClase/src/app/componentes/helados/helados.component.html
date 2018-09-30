@@ -2,14 +2,19 @@
 
 <button (click)="MostrarHelados()">Te muestro los helados</button>
 
+<button (click)="AltaHelado()">Dar de alta helado</button>
+
+
 <div *ngIf="mostrarHelados">
   <p *ngFor="let helado of this.listaHelados">
-    helados works!
     
-    {{helado.id_helado}}
-    {{helado.Sabor}}
     
+    ID: {{helado.id_helado}}
+     - SABOR: {{helado.Sabor}}
+    <img src="assets/imagenes/{{helado.id_helado}}.JPG" >
   </p>
 <div>
+
+
 
 

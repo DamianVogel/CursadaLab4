@@ -25,13 +25,13 @@ export class GenericoService {
   }
 */
   
-  public traerHelados():Observable<any> {
+  public ServiceTraerHelados():Observable<any> {
     return this.miHttp.httpGet("TraerTodosLosHelados", {})
       .pipe(data => { return data; });
 
   }
 
-  public AltaHelado(helado):Observable<any> {
+  public ServiceAltaHelado(helado):Observable<any> {
     return this.miHttp.httpPost("altaHelado",helado)
         .pipe(data =>{ return data;}); 
 

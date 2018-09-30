@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { GenericoService } from '../../servicios/generico.service';
 import { Helado } from '../../clases/helado';
+//import { InputGroup  } from 'primeng/inputtext';
 
 @Component({
   selector: 'app-helados',
@@ -17,9 +18,9 @@ export class HeladosComponent implements OnInit {
 
   mostrarHelados: boolean = false;
 
-  constructor(private servicio:GenericoService) {
+  constructor(private _servicio:GenericoService) {
     
-    this.servicio.traerHelados().subscribe(data => {   
+    this._servicio.ServiceTraerHelados().subscribe(data => {   
       this.listaHelados = JSON.parse(data._body);
     })
     
@@ -27,19 +28,23 @@ export class HeladosComponent implements OnInit {
 
   ngOnInit() {
     
+  }
+
+  AltaHelado(){
+
     this.helado = new Helado('Mascarpoe','Crema',1);
 
     console.log(this.helado);
 
-    this.servicio.AltaHelado(this.helado)
+    this._servicio.ServiceAltaHelado(this.helado)
     .subscribe(
      // data => { this.resultado = data._body;}
     )
     ;
-    
-    
-
+  
   }
+
+
 
   MostrarHelados(){
     if(this.mostrarHelados == false){ 
