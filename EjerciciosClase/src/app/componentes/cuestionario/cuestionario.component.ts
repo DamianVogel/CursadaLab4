@@ -10,7 +10,7 @@ import { EventEmitter} from '@angular/core';
 export class CuestionarioComponent implements OnInit {
 
   
-  
+  /* CODIGO FUNCIONANDO.
   @Input()
   
   tema: string;
@@ -28,9 +28,23 @@ export class CuestionarioComponent implements OnInit {
   {
     this.emiterCuestionario.emit();
   }
+  */
 
+ @Input() temaEnCuestionario: string;
 
+ @Output() emiterCuestionario:EventEmitter<any> = new EventEmitter();
 
+ public cuestionarioEnCuestionario="cuestionariodeinicio";
+
+ constructor() { }
+
+ ngOnInit() {
+ }
+
+ funcionCuestionario()
+ {
+   this.emiterCuestionario.emit();
+ }
 
 
 

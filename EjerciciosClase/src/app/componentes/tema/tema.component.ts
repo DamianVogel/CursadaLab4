@@ -9,6 +9,7 @@ import { CuestionarioComponent } from '../cuestionario/cuestionario.component';
 })
 export class TemaComponent implements OnInit {
 
+  /*  CODIGO FUNCIONANDO
   constructor() { }
 
   public tema="temadeinicio";
@@ -21,5 +22,23 @@ export class TemaComponent implements OnInit {
 
   ngOnInit() {
   }
+
+  */
+
+ constructor() { }
+
+ public temaEnTema="temadeinicio";
+ public contador = 0;
+
+ funcionContador(){
+  this.contador++;
+ }
+
+
+ ngOnInit() {
+ }
+
+
+
 
 }
