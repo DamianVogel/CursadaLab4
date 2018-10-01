@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { CuestionarioComponent } from '../cuestionario/cuestionario.component';
 
 
@@ -25,6 +25,9 @@ export class TemaComponent implements OnInit {
 
   */
 
+ 
+ @Output() temaEmiter: EventEmitter<any> = new EventEmitter();
+ 
  constructor() { }
 
  public temaEnTema="temadeinicio";
@@ -32,7 +35,10 @@ export class TemaComponent implements OnInit {
 
  funcionContador(){
   this.contador++;
- }
+
+  this.temaEmiter.emit();
+  
+}
 
 
  ngOnInit() {

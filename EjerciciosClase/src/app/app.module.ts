@@ -15,7 +15,8 @@ import { CuestionarioComponent } from './componentes/cuestionario/cuestionario.c
 import { PreguntaComponent } from './componentes/pregunta/pregunta.component';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
-import { HeladosComponent } from './componentes/helados/helados.component';    
+import { HeladosComponent } from './componentes/helados/helados.component';
+import { TraerUnHeladoComponent } from './componentes/traer-un-helado/traer-un-helado.component';    
 
 
 const miRuteo = [{path:'pruebaRuteo', component:TemaComponent},
@@ -31,7 +32,8 @@ const miRuteo = [{path:'pruebaRuteo', component:TemaComponent},
     TemaComponent,
     CuestionarioComponent,
     PreguntaComponent,
-    HeladosComponent
+    HeladosComponent,
+    TraerUnHeladoComponent
   ],
   imports: [
     BrowserModule,
