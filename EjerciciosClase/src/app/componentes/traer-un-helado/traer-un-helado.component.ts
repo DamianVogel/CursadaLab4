@@ -13,18 +13,28 @@ export class TraerUnHeladoComponent implements OnInit {
 
   constructor(private _servicio:GenericoService) { }
 
-  @Input() idHelado:number;
   
-  MostrarUnHelado(idHelado){
-    
+  @Input() idHelado:number ;
+  
+  MostrarUnHelado(){
+   /* 
     this._servicio.ServiceTraerUnHelado(idHelado).subscribe(data =>{
       this.unHelado = JSON.parse(data._body);
     });
-
-    console.log(this.idHelado);
+*/
+    console.log("entro");
   }
 
-  
+  /*
+  DoCheck(){
+    if(this.idHelado==undefined)
+    {
+      this.MostrarUnHelado();
+    }
+
+  }
+  */
+
 
   ngOnInit() {
   }
