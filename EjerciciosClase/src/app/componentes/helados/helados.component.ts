@@ -14,7 +14,7 @@ export class HeladosComponent implements OnInit {
 
   unHelado: Helado;
 
-  helado : any;
+  helado : Helado;
 
   resultado : any;
 
@@ -22,9 +22,8 @@ export class HeladosComponent implements OnInit {
 
   constructor(private _servicio:GenericoService) {
     
-    this._servicio.ServiceTraerHelados().subscribe(data => {   
-      this.listaHelados = JSON.parse(data._body);
-    })
+    
+    
     
   }
 
@@ -34,7 +33,7 @@ export class HeladosComponent implements OnInit {
 
   AltaHelado(){
 
-    this.helado = new Helado('Mascarpoe','Crema',1);
+    this.helado = new Helado('Crema del Cielo','Crema',1);
 
     console.log(this.helado);
 
@@ -51,12 +50,20 @@ export class HeladosComponent implements OnInit {
       this.unHelado = JSON.parse(data._body);
     });
 
-    console.log(this.unHelado);
+    //console.log(this.unHelado);
 
   }
 
 
   MostrarHelados(){
+    
+    this._servicio.ServiceTraerHelados().subscribe(data => {   
+      this.listaHelados = JSON.parse(data._body)});
+    
+    
+    
+    
+    
     if(this.mostrarHelados == false){ 
       
       this.mostrarHelados = true;

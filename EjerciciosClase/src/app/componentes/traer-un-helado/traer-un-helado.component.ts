@@ -14,7 +14,7 @@ export class TraerUnHeladoComponent implements OnInit {
   constructor(private _servicio:GenericoService) { }
 
   
-  @Input() idHelado:number ;
+  @Input() idHelado: number;
   
   MostrarUnHelado(){
    /* 
