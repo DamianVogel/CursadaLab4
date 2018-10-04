@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 import { GenericoService } from '../../servicios/generico.service';
 import { Helado } from '../../clases/helado';
 //import { InputGroup  } from 'primeng/inputtext';
@@ -10,9 +10,9 @@ import { Helado } from '../../clases/helado';
 })
 export class HeladosComponent implements OnInit {
 
-  listaHelados: any;
+  //listaHelados: any;
 
-  unHelado: Helado;
+  //unHelado: Helado;
 
   helado : any;
 
@@ -20,12 +20,14 @@ export class HeladosComponent implements OnInit {
 
   mostrarHelados: boolean = false;
 
+  @Output() heladosEmitter: EventEmitter<any> = new EventEmitter();
+
+  @Input() listaHelados: any;
+
+  @Input() unHelado: Helado;
+
   constructor(private _servicio:GenericoService) {
-    
-    this._servicio.ServiceTraerHelados().subscribe(data => {   
-      this.listaHelados = JSON.parse(data._body);
-    })
-    
+   
   }
 
   ngOnInit() {
@@ -47,16 +49,27 @@ export class HeladosComponent implements OnInit {
   }
 
   MostrarUnHelado(idHelado){
+    //console.log(idHelado + "en Helados component")
+    
+    this.heladosEmitter.emit(idHelado);
+    
+    /*
     this._servicio.ServiceTraerUnHelado(idHelado).subscribe(data =>{
       this.unHelado = JSON.parse(data._body);
     });
 
     console.log(this.unHelado);
-
+    */
   }
 
+  
+  MostrarHeladosComponent(){
+  
+    //console.log("entro a MostrarHeladosComponent");
 
-  MostrarHelados(){
+    this.heladosEmitter.emit();
+  
+    
     if(this.mostrarHelados == false){ 
       
       this.mostrarHelados = true;
@@ -68,9 +81,13 @@ export class HeladosComponent implements OnInit {
     
     }
   
+    /* 
+    this._servicio.ServiceTraerHelados().subscribe(data => {   
+      this.listaHelados = JSON.parse(data._body)});
+   */  
+
   
   }
-
 
   
 }

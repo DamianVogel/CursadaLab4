@@ -9,31 +9,32 @@ import { Helado } from '../../clases/helado';
 })
 export class TraerUnHeladoComponent implements OnInit {
 
-  unHelado: Helado;
+  unHeladoComponent: Helado;
+
+  listaHeladosComponent: any;
+
 
   constructor(private _servicio:GenericoService) { }
 
   
-  @Input() idHelado:number ;
-  
-  MostrarUnHelado(){
-   /* 
+  TraerUnHelado(idHelado){
+   
     this._servicio.ServiceTraerUnHelado(idHelado).subscribe(data =>{
-      this.unHelado = JSON.parse(data._body);
+      this.unHeladoComponent = JSON.parse(data._body);
     });
-*/
-    console.log("entro");
+
+  //console.log("entro en TraerUnHelado");
+  //console.log(idHelado);
   }
 
-  /*
-  DoCheck(){
-    if(this.idHelado==undefined)
-    {
-      this.MostrarUnHelado();
-    }
+  
+MostrarHelados(){
+    
+  this._servicio.ServiceTraerHelados().subscribe(data => {   
+  this.listaHeladosComponent = JSON.parse(data._body)});
+  
+}
 
-  }
-  */
 
 
   ngOnInit() {

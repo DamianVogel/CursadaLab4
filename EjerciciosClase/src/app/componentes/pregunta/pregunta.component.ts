@@ -8,26 +8,7 @@ import { EventEmitter} from '@angular/core';
 })
 export class PreguntaComponent implements OnInit {
 
-  /*CODIGO FUNCIONANDO
   
-  @Input()
-  tema: string;
-  @Input()
-  cuestionario: string;
-  
-  @Output() emiterPregunta:EventEmitter<any> = new EventEmitter();
-
-  constructor() { }
-
-  ngOnInit() {
-  }
-
-  funcionContador()
-  {
-    this.emiterPregunta.emit();
-  }
-
-  */
 
  @Input() temaEnPregunta: string;
  @Input() cuestionarioEnPregunta: string;

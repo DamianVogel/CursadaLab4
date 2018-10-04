@@ -20,7 +20,8 @@ import { TraerUnHeladoComponent } from './componentes/traer-un-helado/traer-un-h
 
 
 const miRuteo = [{path:'pruebaRuteo', component:TemaComponent},
-                 {path:'pruebaParcial', component:HeladosComponent} 
+                 {path:'pruebaParcial', component:HeladosComponent},
+                 {path:'pruebaTraer', component:TraerUnHeladoComponent} 
                 ]
 
 
