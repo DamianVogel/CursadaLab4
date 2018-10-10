@@ -1,0 +1,13 @@
+
+<p *ngFor="let vehiculo of this.listaVehiculos">
+    
+    
+  ID: {{vehiculo.ID_VEHICULO}}
+   - modelo: {{vehiculo.MODELO}}
+   - marca: {{vehiculo.MARCA}}
+   - cantidadPuertas: {{vehiculo.CANTIDADDEPUERTAS}}
+
+  <img src="assets/imagenes/{{vehiculo.ID_VEHICULO}}.JPG" >
+
+<app-boton [id]="vehiculo.ID_VEHICULO"    ></app-boton>
+</p>

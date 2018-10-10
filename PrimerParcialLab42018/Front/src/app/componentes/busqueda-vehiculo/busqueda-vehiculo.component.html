@@ -1,0 +1,15 @@
+<input type="text" placeholder="Buscar Modelo" [(ngModel)]="modelo">
+<button (click)="BuscarVehiculo()">  Buscar Modelo</button>
+
+<div *ngIf="muestra">
+    
+    
+  ID: {{respuesta.ID_VEHICULO}}
+   - modelo: {{respuesta.MODELO}}
+   - marca: {{respuesta.MARCA}}
+   - cantidadPuertas: {{respuesta.CANTIDADDEPUERTAS}}
+
+  <img src="assets/imagenes/{{vehiculo.ID_VEHICULO}}.JPG" >
+
+
+</div>
