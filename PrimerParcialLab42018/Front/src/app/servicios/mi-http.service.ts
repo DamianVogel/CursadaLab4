@@ -15,8 +15,8 @@ import { Observable, Subject } from 'rxjs';
 export class MiHttpService {
 
   //api="https://restcountries.eu/rest/v2/";
-  //api="http://localhost/Back/"
-  api="http://localhost/Programacion-3-2017/TP_ESTACIONAMIENTO_DV/"
+  api="http://localhost/Back/"
+  //api="http://localhost/Programacion-3-2017/TP_ESTACIONAMIENTO_DV/"
 
   constructor(public http:Http) { }
   public httpGet(metodo:string, objeto:any):Observable<any>{
