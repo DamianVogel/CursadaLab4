@@ -13,6 +13,7 @@ export class TraerUnHeladoComponent implements OnInit {
 
   listaHeladosComponent: any;
 
+  usuario: any;
 
   constructor(private _servicio:GenericoService) { }
 
@@ -34,6 +35,20 @@ MostrarHelados(){
   this.listaHeladosComponent = JSON.parse(data._body)});
   
 }
+
+Login(loginDatos){
+  
+  console.log(loginDatos + "En login datos de traer-un-helado")
+
+  this._servicio.ServiceLogin(loginDatos).subscribe(data =>{
+    //this.usuario = JSON.parse(data._body);
+    console.log(data);
+  });
+
+
+}
+
+
 
 
 

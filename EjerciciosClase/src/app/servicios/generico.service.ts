@@ -43,5 +43,11 @@ export class GenericoService {
 
   }
 
+  public ServiceLogin(datosLogin):Observable<any> {
+    return this.miHttp.httpPost("validarusuario",datosLogin)
+        .pipe(data =>{ return data;}); 
+
+  }
+  
 
 }

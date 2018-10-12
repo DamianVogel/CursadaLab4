@@ -1,6 +1,7 @@
 import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 import { GenericoService } from '../../servicios/generico.service';
 import { Helado } from '../../clases/helado';
+import { Usuario} from '../../clases/usuario';
 //import { InputGroup  } from 'primeng/inputtext';
 
 @Component({
@@ -14,6 +15,13 @@ export class HeladosComponent implements OnInit {
 
   //unHelado: Helado;
 
+
+  nombre: string;
+
+  password: string;
+
+  usuarioLogin: Usuario;
+
   helado : Helado;
 
   resultado : any;
@@ -21,6 +29,9 @@ export class HeladosComponent implements OnInit {
   mostrarHelados: boolean = false;
 
   @Output() heladosEmitter: EventEmitter<any> = new EventEmitter();
+
+  @Output() loginEmitter: EventEmitter<any> = new EventEmitter();
+
 
   @Input() listaHelados: any;
 
@@ -54,6 +65,20 @@ export class HeladosComponent implements OnInit {
     
    
   }
+
+  LoginHelados(nombre, password)
+  {
+    this.usuarioLogin = new Usuario(nombre,password);
+
+    this.loginEmitter.emit(this.usuarioLogin);
+
+
+    console.log(this.usuarioLogin);
+
+  }
+
+
+
 
   
   MostrarHeladosComponent(){

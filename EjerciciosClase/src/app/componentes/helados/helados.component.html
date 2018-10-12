@@ -16,7 +16,18 @@
 
 <button (click)="MostrarUnHelado(htmlIdHelado)">Traer 1 helado</button>
 
+<button (click)="LoginHelados(nombre, password)">Conectarse</button>
+
+
+
 <input [(ngModel)]="htmlIdHelado" placeholder="ingrese id de helado" name="idHelado" type="text"  style="width:50%"/>
+
+<input [(ngModel)]="nombre" placeholder="nombre" name="nombre" type="text"  style="width:50%"/>
+
+<input [(ngModel)]="password" placeholder="password" name="password" type="text"  style="width:50%"/>
+
+
+
 
 <div *ngIf="mostrarHelados">
   <p *ngFor="let helado of this.listaHelados">
@@ -26,6 +37,13 @@
      - SABOR: {{helado.Sabor}}
     <img src="assets/imagenes/{{helado.id_helado}}.JPG" >
   </p>
+
+
+
+
+
+
+
 <div>
 
 
