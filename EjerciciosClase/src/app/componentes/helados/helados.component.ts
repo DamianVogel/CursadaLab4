@@ -73,7 +73,7 @@ export class HeladosComponent implements OnInit {
     this.loginEmitter.emit(this.usuarioLogin);
 
 
-    console.log(this.usuarioLogin);
+    //console.log(this.usuarioLogin);
 
   }
 
