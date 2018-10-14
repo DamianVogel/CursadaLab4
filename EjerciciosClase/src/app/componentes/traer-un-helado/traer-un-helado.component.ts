@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { GenericoService} from '../../servicios/generico.service';
 import { Helado } from '../../clases/helado';
+import { JwtHelperService } from '@auth0/angular-jwt';
 
 @Component({
   selector: 'app-traer-un-helado',
@@ -18,15 +19,13 @@ export class TraerUnHeladoComponent implements OnInit {
   constructor(private _servicio:GenericoService) { }
 
   
-  TraerUnHelado(idHelado){
+ TraerUnHelado(idHelado){
    
     this._servicio.ServiceTraerUnHelado(idHelado).subscribe(data =>{
       this.unHeladoComponent = JSON.parse(data._body);
     });
 
-  //console.log("entro en TraerUnHelado");
-  //console.log(idHelado);
-  }
+}
 
   
 MostrarHelados(){
@@ -38,13 +37,26 @@ MostrarHelados(){
 
 Login(loginDatos){
   this._servicio.ServiceLogin(loginDatos).subscribe(data =>{
+    
     this.datosToken = JSON.parse(data._body);
+    
     console.log(this.datosToken);
+    
+    const helper = new JwtHelperService();
+
+    const decodedToken = helper.decodeToken(this.datosToken.token);
+    const expirationDate = helper.getTokenExpirationDate(this.datosToken.token);
+    const isExpired = helper.isTokenExpired(this.datosToken.token);
+
+    console.log(decodedToken);
+    console.log(expirationDate);
+    console.log(isExpired);
   
-   
+  
   
   });
-
+    
+  
 
 }
 
@@ -53,6 +65,10 @@ Login(loginDatos){
 
 
   ngOnInit() {
+   
+
+
+
   }
 
 }
