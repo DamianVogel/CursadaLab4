@@ -19,7 +19,7 @@ export class AuthService {
   
   constructor( private router: Router ) {
     this._token = localStorage.getItem('token');
-    console.log("entro al AuthService");
+   // console.log("entro al AuthService");
     //console.log("el token es: "+ this._token);
   }
 
@@ -30,9 +30,10 @@ export class AuthService {
       
       if(this.jwtHelper.isTokenExpired(this._token))
       {
+        //Si entro aca el token expiro
+        
         let rta = false;
-        //let rta = this.jwtHelper.isTokenExpired(this._token) || true;
-        console.log(rta);
+        
         return rta;
       }
       else{
