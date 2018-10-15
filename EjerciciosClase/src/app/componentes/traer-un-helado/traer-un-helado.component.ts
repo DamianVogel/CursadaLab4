@@ -2,6 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { GenericoService} from '../../servicios/generico.service';
 import { Helado } from '../../clases/helado';
 import { JwtHelperService } from '@auth0/angular-jwt';
+import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 
 @Component({
   selector: 'app-traer-un-helado',
@@ -16,7 +17,12 @@ export class TraerUnHeladoComponent implements OnInit {
 
   datosToken: any;
 
-  constructor(private _servicio:GenericoService) { }
+  constructor(
+  
+    private _servicio:GenericoService,
+    private router:Router
+    
+  ) { }
 
   
  TraerUnHelado(idHelado){
@@ -40,8 +46,16 @@ Login(loginDatos){
     
     this.datosToken = JSON.parse(data._body);
     
-    console.log(this.datosToken);
+   // console.log(this.datosToken);     
     
+          if ( this.datosToken.token )
+            {
+              //console.log(this.datosToken.token);
+              localStorage.setItem('token', this.datosToken.token);
+              this.router.navigateByUrl("/pruebaRuteo");
+            }
+          
+    /*        
     const helper = new JwtHelperService();
 
     const decodedToken = helper.decodeToken(this.datosToken.token);
@@ -51,7 +65,7 @@ Login(loginDatos){
     console.log(decodedToken);
     console.log(expirationDate);
     console.log(isExpired);
-  
+    */
   
   
   });

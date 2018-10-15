@@ -16,12 +16,16 @@ import { PreguntaComponent } from './componentes/pregunta/pregunta.component';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { HeladosComponent } from './componentes/helados/helados.component';
-import { TraerUnHeladoComponent } from './componentes/traer-un-helado/traer-un-helado.component';    
+import { TraerUnHeladoComponent } from './componentes/traer-un-helado/traer-un-helado.component';
+import { VerificarJWTService } from './servicios/verificar-jwt.service';
+import { AuthService } from './servicios/auth.service';
+import { ErrorComponent } from './componentes/error/error.component';
 
 
-const miRuteo = [{path:'pruebaRuteo', component:TemaComponent},
+const miRuteo = [{path:'pruebaRuteo',  canActivate: [VerificarJWTService], component:TemaComponent},
                  {path:'pruebaParcial', component:HeladosComponent},
-                 {path:'pruebaTraer', component:TraerUnHeladoComponent} 
+                 {path:'pruebaTraer', component:TraerUnHeladoComponent}, 
+                 {path:'error', component:ErrorComponent} 
                 ]
 
 
@@ -34,7 +38,8 @@ const miRuteo = [{path:'pruebaRuteo', component:TemaComponent},
     CuestionarioComponent,
     PreguntaComponent,
     HeladosComponent,
-    TraerUnHeladoComponent
+    TraerUnHeladoComponent,
+    ErrorComponent
   ],
   imports: [
     BrowserModule,
@@ -47,7 +52,9 @@ const miRuteo = [{path:'pruebaRuteo', component:TemaComponent},
   ],
   providers: [
     MiHttpService,
-    GenericoService
+    GenericoService,
+    VerificarJWTService,
+    AuthService
 
   ],
   bootstrap: [AppComponent]
