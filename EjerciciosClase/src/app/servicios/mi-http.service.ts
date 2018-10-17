@@ -41,8 +41,13 @@ export class MiHttpService {
  
   public httpPost(metodo:string, objeto:any)
   {
-    return this.http.post(this.api + metodo,
-                          objeto
+    
+    //var array = new Array(objeto,this.token);
+
+    //console.log(array);
+
+    return this.http.post(this.api + metodo, objeto
+                          
                           //,this.httpOptions  
                         )
     .pipe(catchError(this.handleError));

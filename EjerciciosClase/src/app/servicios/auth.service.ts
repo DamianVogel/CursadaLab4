@@ -26,12 +26,12 @@ export class AuthService {
   public isLogued()
   {
     try {
-      console.log( 'is logued', this.jwtHelper.isTokenExpired(this._token));
+      //console.log( 'is logued', this.jwtHelper.isTokenExpired(this._token));
       
       if(this.jwtHelper.isTokenExpired(this._token))
       {
         //Si entro aca el token expiro
-        
+        console.log("Token Expiro");
         let rta = false;
         
         return rta;

@@ -53,8 +53,10 @@ export class HeladosComponent implements OnInit {
 
     this._servicio.ServiceAltaHelado(this.helado)
     .subscribe(
-     // data => { this.resultado = data._body;}
-    )
+      data => { this.resultado = data._body;
+          console.log(this.resultado);
+      
+      })
     ;
   
   }

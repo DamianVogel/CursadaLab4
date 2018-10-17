@@ -11,16 +11,16 @@ import { AuthService } from '../servicios/auth.service';
 export class VerificarJWTService implements CanActivate {
 
   constructor( private router: Router, private auth: AuthService ) {
-    console.log('isLogued()', auth.isLogued());
+    //console.log('isLogued()', auth.isLogued());
   }
 
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean | Promise<boolean> {
 
       // 
         let url: string = state.url;
-        console.log('url dentro de canActivate', url);
-        console.log(route);
-        console.log(state);
+        //console.log('url dentro de canActivate', url);
+        //console.log(route);
+        //console.log(state);
 
         if ( this.auth.isLogued() )
         {

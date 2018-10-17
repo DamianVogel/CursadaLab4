@@ -32,7 +32,14 @@ export class GenericoService {
   }
 
   public ServiceAltaHelado(helado):Observable<any> {
-    return this.miHttp.httpPost("altaHelado",helado)
+    
+    let token = localStorage.getItem('token');
+    
+    let array = new Array(helado, token);
+
+
+    
+    return this.miHttp.httpPost("altaHelado",array)
         .pipe(data =>{ return data;}); 
 
   }
