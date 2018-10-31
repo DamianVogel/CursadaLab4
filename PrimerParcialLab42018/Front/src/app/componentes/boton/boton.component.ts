@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { MascotasService } from 'src/app/servicios/mascotas.service';
 
 @Component({
   selector: 'app-boton',
@@ -7,9 +8,10 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class BotonComponent implements OnInit {
 
+  
   @Input () id: number;
 
-  constructor() {
+  constructor(public _servicio:MascotasService) {
     
    }
 
@@ -21,4 +23,13 @@ export class BotonComponent implements OnInit {
     console.log(this.id);
   }
 
-}
+  public BorrarMascota(id)
+  {
+    this._servicio.ServiceBajaMascota(id).subscribe(data => {   
+      //this.listaMascotas = JSON.parse(data._body);
+      //console.log(this.listaMascotas);
+      
+
+    })
+  }
+} 

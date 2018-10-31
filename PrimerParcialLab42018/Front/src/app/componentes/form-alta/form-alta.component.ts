@@ -5,7 +5,8 @@ import {NgForm} from '@angular/forms';
 import { Helado } from '../../clases/helado';
 import { Observable, Subscription } from 'rxjs';
 import { tap } from 'rxjs/operators';
-import { Vehiculo} from '../../clases/vehiculo';
+import { Mascota} from '../../clases/mascota';
+import { MascotasService } from 'src/app/servicios/mascotas.service';
 
 
 
@@ -16,21 +17,23 @@ import { Vehiculo} from '../../clases/vehiculo';
 })
 export class FormAltaComponent implements OnInit {
 
-  vehiculo:Vehiculo;
-  modelo:string;
-  marca:string;
-  cantidadDePuertas:number;
+  mascota:Mascota;
+  nombre:string;
+  tipo:string;
+  fechaDeNacimiento:string;
   
   resultado: string;
 
-  constructor( private _servicio:VehiculosServiceService) { }
+  constructor( private _servicio:MascotasService) { }
 
-  GuardarVehiculo(){
+  GuardarMascota(){
     
-    this.vehiculo = new Vehiculo(this.modelo, this.marca ,this.cantidadDePuertas);
-     this._servicio.ServiceAltaVehiculo(this.vehiculo)
-     .then((data)=>{console.log(data)})
-    .catch((data)=>{console.log(data)});
+    this.mascota = new Mascota(this.nombre, this.tipo ,this.fechaDeNacimiento);
+     this._servicio.ServiceAltaMascota(this.mascota).subscribe(data=>{
+       console.log(data._body);
+     });
+    //  .then((data)=>{console.log(data)})
+    // .catch((data)=>{console.log(data)});
 
      
      

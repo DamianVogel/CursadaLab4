@@ -15,8 +15,8 @@ import { Observable, Subject } from 'rxjs';
 export class MiHttpService {
 
   //api="https://restcountries.eu/rest/v2/";
-  api="http://localhost/Back/"
-  //api="http://localhost/Programacion-3-2017/TP_ESTACIONAMIENTO_DV/"
+  //api="http://localhost/Back/"
+  api="http://localhost/Programacion-3-2017/TP_ESTACIONAMIENTO_DV/"
 
   constructor(public http:Http) { }
   public httpGet(metodo:string, objeto:any):Observable<any>{
@@ -36,10 +36,10 @@ export class MiHttpService {
 */
   public httpPost(metodo:string, objeto:any)
   {
-    return this.http.post(this.api + metodo,objeto)
-    .toPromise()
-    .then((data)=>console.log(data))
-    .catch((data)=>console.log(data))
+    return this.http.post(this.api + metodo,objeto).pipe(tap(data => {return this.extraerDatos(data)}));
+    // .toPromise()
+    // .then((data)=>console.log(data))
+    // .catch((data)=>console.log(data))
    // .pipe(catchError(this.handleError));
 
   }
