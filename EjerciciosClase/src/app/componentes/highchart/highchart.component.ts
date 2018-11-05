@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ChartModule } from 'angular-highcharts';
-import { Highcharts} from 'angular-highcharts';
+
 import { Chart} from 'angular-highcharts';
 
 @Component({
@@ -24,7 +23,7 @@ export class HighchartComponent implements OnInit {
   }
 
   addSerie() {
-    this.chart.addSeries({
+    this.chart.addSerie({
       name: 'Line ' + Math.floor(Math.random() * 10),
       data: [
         Math.floor(Math.random() * 10),
@@ -45,7 +44,7 @@ export class HighchartComponent implements OnInit {
   }
 
   removeSerie() {
-    this.chart.removeSeries(this.chart.ref.series.length - 1);
+    this.chart.removeSerie(this.chart.ref.series.length - 1);
   }
 
   init() {

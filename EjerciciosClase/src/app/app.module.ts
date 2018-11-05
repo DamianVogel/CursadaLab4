@@ -21,6 +21,7 @@ import { VerificarJWTService } from './servicios/verificar-jwt.service';
 import { AuthService } from './servicios/auth.service';
 import { ErrorComponent } from './componentes/error/error.component';
 import { HighchartComponent } from './componentes/highchart/highchart.component';
+import { ChartModule } from 'angular-highcharts';
 
 
 const miRuteo = [{path:'pruebaRuteo',  canActivate: [VerificarJWTService], component:TemaComponent},
@@ -48,7 +49,8 @@ const miRuteo = [{path:'pruebaRuteo',  canActivate: [VerificarJWTService], compo
     BrowserModule,
     HttpModule,
     FormsModule,
-    RouterModule.forRoot(miRuteo)
+    RouterModule.forRoot(miRuteo),
+    ChartModule
 
     //HttpClientModule
     
