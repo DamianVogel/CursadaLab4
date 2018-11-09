@@ -20,12 +20,15 @@ import { TraerUnHeladoComponent } from './componentes/traer-un-helado/traer-un-h
 import { VerificarJWTService } from './servicios/verificar-jwt.service';
 import { AuthService } from './servicios/auth.service';
 import { ErrorComponent } from './componentes/error/error.component';
+import { HighchartComponent } from './componentes/highchart/highchart.component';
+import { ChartModule } from 'angular-highcharts';
 
 
 const miRuteo = [{path:'pruebaRuteo',  canActivate: [VerificarJWTService], component:TemaComponent},
                  {path:'pruebaParcial', component:HeladosComponent},
                  {path:'pruebaTraer', component:TraerUnHeladoComponent}, 
-                 {path:'error', component:ErrorComponent} 
+                 {path:'error', component:ErrorComponent},
+                 {path:'highcharts', component:HighchartComponent}
                 ]
 
 
@@ -39,13 +42,15 @@ const miRuteo = [{path:'pruebaRuteo',  canActivate: [VerificarJWTService], compo
     PreguntaComponent,
     HeladosComponent,
     TraerUnHeladoComponent,
-    ErrorComponent
+    ErrorComponent,
+    HighchartComponent
   ],
   imports: [
     BrowserModule,
     HttpModule,
     FormsModule,
-    RouterModule.forRoot(miRuteo)
+    RouterModule.forRoot(miRuteo),
+    ChartModule
 
     //HttpClientModule
     

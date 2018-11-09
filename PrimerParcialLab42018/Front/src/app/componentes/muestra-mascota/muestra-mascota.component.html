@@ -1,0 +1,12 @@
+   
+   <div *ngIf="mascota">
+   
+   ID: {{mascota.id}}
+   - nombre: {{mascota.nombre}}
+   - marca: {{mascota.tipo}}
+   - Fecha de Nacimiento: {{mascota.fechaDeNacimiento}}
+
+  <img src="assets/imagenes/{{mascota.id}}.JPG" >
+
+</div>
+<app-busqueda-mascota (lanzador)="MuestraMascota($event)"></app-busqueda-mascota>

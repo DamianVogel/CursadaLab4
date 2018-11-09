@@ -18,12 +18,12 @@ export class VehiculosServiceService {
       .pipe(data => { return data; });
   }
 
-  public ServiceAltaVehiculo(vehiculo) {
-    return this.miHttp.httpPost("altaVehic",vehiculo)
-    .then((data)=>{return data})
-    .catch((data)=>{return data});
+  // public ServiceAltaVehiculo(vehiculo) {
+  //   return this.miHttp.httpPost("altaVehic",vehiculo)
+  //   .then((data)=>{return data})
+  //   .catch((data)=>{return data});
 
-  }
+  // }
 
   public ServiceTraerUnVehiculo(vehiculo):Observable<any> {
     return this.miHttp.httpGet("traerunVehiculo/"+vehiculo, {})

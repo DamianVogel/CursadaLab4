@@ -35,10 +35,16 @@ import {MatCardModule} from '@angular/material/card';
 import { ListaVehiculosComponent } from './componentes/lista-vehiculos/lista-vehiculos.component';
 import { BotonComponent } from './componentes/boton/boton.component';
 import { BusquedaVehiculoComponent } from './componentes/busqueda-vehiculo/busqueda-vehiculo.component';
+import { MascotasComponent } from './componentes/mascotas/mascotas.component';
+import { ListaMascotasComponent } from './componentes/lista-mascotas/lista-mascotas.component';
+import { MascotasService } from './servicios/mascotas.service';
+import { BusquedaMascotaComponent } from './componentes/busqueda-mascota/busqueda-mascota.component';
+import { MuestraMascotaComponent } from './componentes/muestra-mascota/muestra-mascota.component';
 
 const miRuteo = [{path:'pruebaRuteo', component:TemaComponent},
                  {path:'pruebaParcial', component:HeladosComponent},
-                 {path:'Parcial' , component:AppComponent}
+                 {path:'Parcial' , component:AppComponent},
+                 {path:'RecuParcial' , component:AppComponent},
                 ]
 
 @NgModule({
@@ -59,7 +65,11 @@ const miRuteo = [{path:'pruebaRuteo', component:TemaComponent},
     BusquedaHeladoComponent,
     ListaVehiculosComponent,
     BotonComponent,
-    BusquedaVehiculoComponent
+    BusquedaVehiculoComponent,
+    MascotasComponent,
+    ListaMascotasComponent,
+    BusquedaMascotaComponent,
+    MuestraMascotaComponent
   ],
   imports: [
     BrowserModule,
@@ -79,7 +89,8 @@ const miRuteo = [{path:'pruebaRuteo', component:TemaComponent},
   ],
   providers: [
     MiHttpService,
-    HeladosService
+    HeladosService,
+    MascotasService
 
   ],
   bootstrap: [AppComponent]

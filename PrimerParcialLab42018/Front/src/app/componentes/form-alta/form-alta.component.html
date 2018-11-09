@@ -1,16 +1,19 @@
 
 <form class="example-form">
   <mat-form-field class="example-full-width">
-  <textarea matInput [(ngModel)]="modelo" type="text" placeholder="Modelo" name="modelo"></textarea>
+  <textarea matInput [(ngModel)]="nombre" type="text" placeholder="nombre" name="nombre"></textarea>
   </mat-form-field>
   <br>
   <mat-form-field class="example-full-width">
-  <textarea matInput [(ngModel)]="marca" type="text" placeholder="Marca" name="marca"></textarea>
+  <textarea matInput [(ngModel)]="tipo" type="text" placeholder="tipo" name="tipo"></textarea>
   </mat-form-field>
   <br>
   <mat-form-field class="example-full-width">
-  <textarea matInput [(ngModel)]="cantidadDePuertas" type="text" placeholder="Cantidad de Puertas" name="cantidadDePuertas"></textarea>
+  <textarea matInput [(ngModel)]="fechaDeNacimiento" type="text" placeholder="fecha de nac" name="fecha de nac"></textarea>
   </mat-form-field>
+  
+  
+  
   <br>
-  <button mat-raised-button color="primary" (click)="GuardarVehiculo()"> Guardar </button>
+  <button mat-raised-button color="primary" (click)="GuardarMascota()"> Guardar </button>
 </form>
