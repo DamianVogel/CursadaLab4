@@ -1,9 +1,10 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+
 import {Mascota } from '../../../clases/mascota'
 
 @Component({
   selector: 'app-buscar',
-  animations: [ routerTransition ],
+  //animations: [ routerTransition ],
   templateUrl: './buscar.component.html',
   styleUrls: ['./buscar.component.css']
 })

@@ -23,7 +23,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     BuscarComponent,
     BorrarBotonComponent,
     DirectivaTiposDirective,
-    BrowserAnimationsModule
+   // BrowserAnimationsModule
   ],
   imports: [
     BrowserModule,
